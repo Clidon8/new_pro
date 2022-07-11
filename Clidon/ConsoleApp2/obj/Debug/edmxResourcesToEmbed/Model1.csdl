@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Project_whriteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="File">
+    <Key>
+      <PropertyRef Name="File_Code" />
+    </Key>
+    <Property Name="File_Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="File_Name1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="File_Url" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="User_Code" Type="Int32" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Files__User_Code__3C69FB99" FromRole="Files" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Letter">
+    <Key>
+      <PropertyRef Name="Letters_Code" />
+    </Key>
+    <Property Name="Letters_Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ascii_Code" Type="Int32" />
+    <Property Name="Letter_Image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="User_Code" Type="Int32" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Letters__User_Co__398D8EEE" FromRole="Letters" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="payment">
+    <Key>
+      <PropertyRef Name="Payment_Code" />
+    </Key>
+    <Property Name="Payment_Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Payment_Date" Type="DateTime" Precision="3" />
+    <Property Name="Payment_Sum" Type="Double" />
+    <Property Name="User_Code" Type="Int32" />
+    <NavigationProperty Name="User" Relationship="Self.FK__payments__User_C__3F466844" FromRole="payments" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="User_Code" />
+    </Key>
+    <Property Name="User_Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="User_Mail" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Is_Manager" Type="Boolean" />
+    <NavigationProperty Name="Files" Relationship="Self.FK__Files__User_Code__3C69FB99" FromRole="Users" ToRole="Files" />
+    <NavigationProperty Name="Letters" Relationship="Self.FK__Letters__User_Co__398D8EEE" FromRole="Users" ToRole="Letters" />
+    <NavigationProperty Name="payments" Relationship="Self.FK__payments__User_C__3F466844" FromRole="Users" ToRole="payments" />
+  </EntityType>
+  <Association Name="FK__Files__User_Code__3C69FB99">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Files" Type="Self.File" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_Code" />
+      </Principal>
+      <Dependent Role="Files">
+        <PropertyRef Name="User_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Letters__User_Co__398D8EEE">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Letters" Type="Self.Letter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_Code" />
+      </Principal>
+      <Dependent Role="Letters">
+        <PropertyRef Name="User_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__payments__User_C__3F466844">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="payments" Type="Self.payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_Code" />
+      </Principal>
+      <Dependent Role="payments">
+        <PropertyRef Name="User_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Project_whriteEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Files" EntityType="Self.File" />
+    <EntitySet Name="Letters" EntityType="Self.Letter" />
+    <EntitySet Name="payments" EntityType="Self.payment" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK__Files__User_Code__3C69FB99" Association="Self.FK__Files__User_Code__3C69FB99">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Files" EntitySet="Files" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Letters__User_Co__398D8EEE" Association="Self.FK__Letters__User_Co__398D8EEE">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Letters" EntitySet="Letters" />
+    </AssociationSet>
+    <AssociationSet Name="FK__payments__User_C__3F466844" Association="Self.FK__payments__User_C__3F466844">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="payments" EntitySet="payments" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

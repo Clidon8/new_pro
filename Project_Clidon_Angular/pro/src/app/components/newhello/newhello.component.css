@@ -1,0 +1,21 @@
+/* div
+{
+  background-color:rgb(240, 177, 227) ;
+  color: rgb(122, 6, 64);
+} */
+mat-form-field
+{
+  background-color:rgb(240, 177, 227) ;
+  color: rgb(122, 6, 64);
+
+}
+.dialog{
+  text-align: center;
+  background-color:rgb(240, 177, 227) ;
+  color: rgb(122, 6, 64);
+  margin-block-end: 20px;
+  }
+h2{
+  background-color:rgb(240, 177, 227) ;
+  color: rgb(122, 6, 64);
+ }

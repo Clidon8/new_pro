@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "CWjImrNggVVkGNPhbCN6MD1JmXSkscUEn3b2+sKWZQRMadVaqj/VlPZsZHZO8uEHRK3nb+Ot4zGrL4qrVAz33w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\שטרן\\Documents\\Clidon\\ConsoleApp2\\ConsoleApp2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\שטרן\\.nuget\\packages\\entityframework\\6.2.0\\entityframework.6.2.0.nupkg.sha512"
+  ],
+  "logs": []
+}

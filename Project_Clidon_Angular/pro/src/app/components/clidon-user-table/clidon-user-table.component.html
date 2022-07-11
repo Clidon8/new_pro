@@ -1,0 +1,18 @@
+
+ <table class="border">
+  <tr class="title" >
+    <td  >קוד </td>
+    <td>שם משפחה</td>
+    <td>שם פרטי</td>
+    <!-- <td>סיסמא</td> -->
+  </tr>
+   <tr *ngFor=' let  i of u'>
+      <td (click)="openDialogDELET(i.code,i.firstName)">{{i.code}}</td>
+      <td mat-raised-button (click)="openDialoglastname(i.code,'lastname',i.lastName)">{{i.lastName}}</td>
+      <td mat-raised-button (click)="openDialogfirstName(i.code,'firstname',i.firstName)">{{i.firstName}}</td>
+      <!-- <td mat-raised-button (click)="openDialogpassword(i.code,'password',i.password)">{{i.password}}</td> -->
+   </tr>
+</table>
+<!-- (click)="UpdateUser1(i.code,'firstname','שם פרטי חדש')" -->
+<!-- "UpdateUser1(i.code,'password','סיסמא חדשה')" -->
+<!-- Delet(i.code) -->

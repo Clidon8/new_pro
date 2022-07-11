@@ -1,0 +1,44 @@
+.tab{
+
+    padding: 10px;
+    background-color: rgb(241, 210, 235) ;
+
+}
+.tabs{
+    direction: rtl;
+    display: flex;
+    padding: 20px,0px,20px,0px;
+    background-color: rgb(240, 177, 227);
+
+}
+.tabIn{
+    padding: 10px;
+    background-color: rgb(241, 210, 235) ;
+}
+
+.H{
+   padding:  50px 300px 300px 300px;
+   /* margin: 50px 300px 300px 300px ; */
+}
+.h1{
+    padding: 10px;;
+    text-align: center;
+    color: rgb(122, 6, 64);;
+}
+.h2{
+    text-align: center;
+    color: rgb(122, 6, 64);
+}
+.mydiv{
+    background-color: rgb(241, 210, 235) ;
+}
+.myForm{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: rgb(241, 210, 235) ;
+    padding: 20PX,20px,20PX,20PX;
+}
+.tab1{
+    background-color: rgb(241, 210, 235) ;
+}

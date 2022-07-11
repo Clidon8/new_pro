@@ -1,0 +1,56 @@
+.SingIn{
+    text-align: center;
+}
+.whrite{
+    color:  rgb(228, 46, 137);;
+    font-size: 20px;
+}
+.textalain
+{
+text-align: center;
+}
+.Input{
+   color: rgb(15, 4, 4);
+}
+
+.inputText{
+   text-align: right;
+   margin: 10px 10px 10px 10px;
+
+}
+
+.green{
+/* border: solid,5px,rgb(70, 216, 106); */
+border-style: solid;
+border-color: rgb(70, 216, 106);
+color: rgb(70, 216, 106);
+}
+.red{
+    /* border: solid , 5px , rgb(241, 41, 74);; */
+    border-style: solid;
+    border-color: rgb(241, 41, 74);
+    color: rgb(241, 41, 74);
+}
+.b{
+  color: rgb(228, 46, 137);
+  background-color: rgb(250, 192, 245);
+  border-color: rgb(228, 46, 137);
+
+}
+img{
+  width: 20%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 25px 670px;
+  /* float: left; */
+
+  overflow: auto;
+  /* border-radius: 2000px 2000px 2000px 2000px; */
+  /* background-color: #b320c7cc; */
+  /* box-shadow: 0 4px 8px 0 rgba(223, 14, 14, 0.2), 0 6px 20px 0 rgba(21, 192, 112, 0.2); */
+  /* margin-bottom: -40px; */
+}
+.example-form-field {
+  width: 200px;
+}
+

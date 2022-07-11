@@ -1,0 +1,13 @@
+div{
+
+    background-color: rgb(241, 210, 235) ;
+    color: rgb(122, 6, 64);
+    border-style:ridge;
+    background-color: rgb(241, 210, 235);
+    text-align: center;
+    padding: 10px;
+}
+/* groove ,ridge*/
+.y{
+  padding: 10px,10px,10px,10px;
+}

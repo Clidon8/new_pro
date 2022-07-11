@@ -1,0 +1,47 @@
+<div class="u_p"><br/><br/><br/>
+    <h3 class="h3">משתמש יקר , על מנת שתוכל להכנס , עליך למלא כמה פרטים חשובים</h3>
+    <mat-form-field class="textalain">
+      <mat-label> שם פרטי </mat-label>
+      <input matInput  type="text" #fname [(ngModel)]="user.firstName"  /><br/><br/>
+     </mat-form-field><br/><br/>
+
+     <mat-form-field class="textalain">
+      <mat-label> שם משפחה </mat-label>
+      <input matInput  type="text" #lname [(ngModel)]="user.lastName"  /><br/><br/>
+     </mat-form-field><br/><br/>
+     <mat-form-field class="textalain">
+      <mat-label> סיסמא  </mat-label>
+      <input matInput  #p type="password"  [(ngModel)]="password" />
+      <br/><br/>
+     </mat-form-field><br/><br/>
+
+    <input class="p" type="button" (click)="GoToclidonChangeUserPassword()" value="שינוי סיסמא"/>
+    <br/><br/>
+    <mat-spinner *ngIf="flag"></mat-spinner>
+    <button class="p" mat-mini-fab color="primary" (click)=LOGIN(password,user.lastName,user.firstName) > אישור</button>
+
+    <!-- <button class="p" mat-mini-fab color="primary" (click)=isSignIn(user.lastName,user.firstName) >אישור</button> -->
+    <!-- (click)="isSignIn(user.firstName,user.lastName)" -->
+    <!-- <button mat-mini-fab color="basic" (click)="isSignIn()">אישור</button>
+    <button mat-mini-fab color="accent" (click)="isSignIn()">אישור</button>
+    <button mat-mini-fab color="warn" (click)="isSignIn()">אישור</button>
+    <a mat-stroked-button href="https://angular.io/" target="_blank">לעבור לדף אינטרנט</a> -->
+    <!-- icon -->
+    <!-- <mat-icon>add_shopping_cart</mat-icon> -->
+    <!-- אלמנט מסתובב -->
+   <!-- <mat-progress-spinner value="100"></mat-progress-spinner> -->
+   <!-- מסתובב באמת -->
+   <!-- <mat-spinner *ngIf="flag"></mat-spinner> -->
+   <!-- הצגת שורות קלט -->
+   <!-- <mat-form-field>
+     <mat-label>name</mat-label>
+     <input matInput>
+    </mat-form-field> -->
+    <!-- הצגת איקון שקופץ -->
+    <!-- <button mat-raised-button color="primary"
+    matBadge="8" matBadgePosition="before" matBadgeColor="accent">
+  Action
+</button> -->
+    <br/><br/><br/><br/><br/><br/><br/><br/>
+</div>
+<router-outlet></router-outlet>

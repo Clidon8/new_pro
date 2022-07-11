@@ -1,0 +1,22 @@
+<div class="i_m"><br/><br/>
+    <h3> מנהל יקר, על מנת שתוכל לשנות את תפקיד אחד ממשתמשיך עליך להכניס מספר פרטים </h3>
+     <mat-form-field class="textalain">
+     <mat-label >סיסמת משתמש</mat-label>
+     <input matInput   type="password" [(ngModel)]="password">
+    </mat-form-field><br/>
+    <mat-form-field class="textalain">
+      <mat-label >שם פרטי משתמש</mat-label>
+      <input matInput   type="text" [(ngModel)]="firstname">
+     </mat-form-field><br/>
+     <mat-form-field class="textalain">
+      <mat-label >שם משפחה משתמש</mat-label>
+      <input matInput   type="text" [(ngModel)]="lastname">
+     </mat-form-field><br/>
+<div>
+    משתמש חופשי<input class="center" type="radio" (click)="meneger()" name="y" ><br/><br/>
+    משתמש פשוט<input class="center"  type="radio"  (click)="nomeneger()"  name="y"/><br/><br/>
+
+    <!-- <input class="b" type="button" (click)="UpdetIsMeneger1(password,firstname,lastname)" value="אישור"/> -->
+    <input class="b" type="button" (click)="UpdetIsMeneger(password,lastname,firstname)" value="אישור"/>
+</div>
+</div>

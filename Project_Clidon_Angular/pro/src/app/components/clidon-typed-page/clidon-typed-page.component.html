@@ -1,0 +1,67 @@
+<!--
+<!-- <input class="Files"  type="button" value=" הצג"/> -->
+<!-- <input class="File_uploading"  type="file" value="העלאת קובץ"/> -->
+<!-- <div class="personal">
+    <h3> משתמש יקר , באתר זה תוכל להקליד  מסמכים בקלות וללא בזבוז זמן וכן תוכל לשמור את המסמכים שלך בבטחה</h3>
+</div><br/> -->
+
+<!-- <input class="save" type="button" value=" שמירה"/> -->
+<!-- --------------------------------------------------------------- -->
+<!-- <button mat-button color="primary"
+(click)="fileUpload.click()" > -->
+<!-- <mat-icon>
+ add_photo_alternate
+</mat-icon> -->
+<!-- הוסף תמונה
+</button>
+<input type="file" (change)="selectFile($event)" observeFiles
+style="display: none; " id="uploadCaptureInputFile" #fileUpload/> -->
+
+ <!-- <img class="im" [src]="url"> -->
+<!-- ------------------------------------------------------------------ -->
+<!-- קבצים -->
+<!-- קבצים-------------------------------------<br> -->
+<!-- <input type="file" (change)="upload($event)"><br> -->
+<h2 style="text-align: center;">
+ משתמש יקר על מנת שנוכל להקליד את המסמכים שלך עלך להעלות את תמונת הכתב שלך
+</h2>
+
+<!-- ------------------------------------------- -->
+
+
+<!-- <hello name="{{ name }}"></hello>
+<a href="assets/download.csv" -->
+
+<!-- >Download Now</a> -->
+<!-- class="btn btn-default"
+target="_blank"
+download="download.csv" -->
+
+<!-- דוגמא טובה -->
+<!-- <hello name="{{ name }}"></hello>
+<p>
+	Start editing to see some magic happen :)
+</p> -->
+
+<!-- <button (click)="download()">Generate my CV!</button> -->
+<!-- <input class="out" class="p" (click)="Gotohome()" type="button" value=" יציאה"/> -->
+
+<!-- <div class="upload">
+  <label class="span">לחץ להקלדת תמונת הטקסט</label><br>
+ <input type="file" class="up" (change)="upload($event)" #fileUpload >
+  <img [src]="localUrl" *ngIf="localUrl" class="imgPlaceholder">
+</div> -->
+<div class="upload">
+  <label class="span">לחץ להקלדת תמונת הטקסט</label><br>
+  <!-- <mat-spinner *ngif="showSpinner"></mat-spinner> -->
+ <input class="out" type="file" class="up" (change)="upload(fileUpload,1)" #fileUpload ><br/>
+ <!-- <input class="out" type="file" class="up" (change)="upload(fileUpload,2)" #fileUpload ><br/> -->
+ <!-- <input class="out" type="file" class="up" (change)="upload(fileUpload,3)" #fileUpload ><br/> -->
+ <!-- <input type="button"class="out" type="file" class="up" (change)="upload(fileUpload)" #fileUpload ><br/>
+ <input type="button" class="out" type="file" class="up" (change)="upload(fileUpload)" #fileUpload><br/>
+ <input type="button" class="out" type="file" class="up" (change)="upload(fileUpload)" #fileUpload><br/> -->
+
+</div>
+
+<br/><br/><br/><br/><br/>
+<input class="out" class="p" (click)="Gotohome()" type="button" value=" יציאה"/>

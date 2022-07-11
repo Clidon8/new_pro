@@ -1,0 +1,124 @@
+<!-- <form [formGroup]="formData"  >
+    <div class="SingIn"><br/><br/>
+        <a class="whrite">עליך להכניס את פרטיך על מנת להרשם לאתר שלנו</a><br/><br/>
+    <input class="inputText" formControlName="name"
+    [ngClass]="{'green': name.valid && name.dirty, red: name.invalid && name.dirty}"
+       placeholder=" שם פרטי" /><br/><br/>
+    <input class="inputText" formControlName="name"
+    [ngClass]="{'green': email.valid && email.dirty, red: email.invalid && email.dirty}" placeholder="שם משפחה"/><br/><br/>
+    <input class="inputText" formControlName="password"
+    [ngClass]="{'green': password.valid && password.dirty, red: password.invalid && password.dirty}"[(ngModel)]="user.password" placeholder="הקלד סיסמא  "/><br/><br/>
+    <input class="inputText" formControlName="password"
+    [ngClass]="{'green': password.valid && password.dirty, red: password.invalid && password.dirty}"[(ngModel)]="user.password" placeholder=" אמת את סיסמתך  "/><br/><br/>
+    <input class="inputText" formControlName="email"
+    [ngClass]="{'green': email.valid && email.dirty, red: email.invalid && email.dirty}" [(ngModel)]="user.email" placeholder=" הכנס את כתובת המייל שלך  "/><br/><br/>
+    <div>
+    <button (click)="resetForm()"> לכתיבה מחודשת </button>
+    <input (click)="insertUser()" type="button"   value="אישור "/>
+    </div>
+    </div>
+    <div class="frm" id=frm>
+  <form novalidate  (submit)="SignUp(frm)" #frm="ngForm">
+    <div class="input">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="שם חברה"  name="companyName" [(ngModel)]="newCompany.CompanyName" type="text" #companyName="ngModel" required maxlength="30">
+      </mat-form-field>
+      <span class="error" *ngIf="companyName.errors!=null && companyName.errors.required && companyName.touched">שדה חובה</span>
+    </div>
+
+</form> -->
+<!-- /// -->
+<form novalidate [formGroup]="formData"  >
+  <div class="SingIn"><br/><br/>
+      <a class="whrite">עליך להכניס את פרטיך על מנת להרשם לאתר שלנו</a><br/><br/>
+      <!-- <div>
+      <mat-form-field class="textalain">
+        <mat-label > שם פרטי</mat-label>
+        <input matInput placeholder="שם פרטי" name="fname" #fname="ngModel"  class="inputText"
+        type="text"  required maxlength="30" minlength="5"
+        [(ngModel)]="user.firstName" >
+       </mat-form-field><br/><br/>
+       <span class="error" *ngIf="fname.errors!=null && fname.errors.required && fname.touched">שדה חובה</span>
+      </div> -->
+      <div>
+      <mat-form-field class="textalain">
+        <mat-label > שם פרטי</mat-label>
+        <input matInput class="inputText" formControlName="name"
+        [(ngModel)]="user.firstName" required  minlength="2" maxlength="20">
+       </mat-form-field><br/>
+       <span  *ngIf="name.errors!=null && name.errors.required && name.touched">שדה חובה</span>
+       <br/><br/>
+      </div>
+  <!-- <input class="inputText" formControlName="name"
+  [(ngModel)]="user.firstName"   placeholder=" שם פרטי" /><br/><br/> -->
+  <div>
+  <mat-form-field class="textalain">
+  <mat-label > שם משפחה</mat-label>
+  <input matInput class="inputText" formControlName="name"
+  [(ngModel)]="user.lastName" required  minlength="2" maxlength="20">
+ </mat-form-field><br/>
+ <span  *ngIf="name.errors!=null && name.errors.required && name.touched">שדה חובה</span>
+ <br/><br/>
+</div>
+
+  <!-- <input class="inputText" formControlName="name"
+  [(ngModel)]="user.lastName" placeholder="שם משפחה"/><br/><br/> -->
+
+    <div>
+      <mat-form-field class="textalain">
+        <mat-label>הקלד סיסמא </mat-label>
+        <input matInput class="inputText" formControlName="password"
+        [(ngModel)]="user.password" type="password" required  minlength="4" maxlength="30">
+       </mat-form-field><br/>
+       <span  *ngIf="password.errors!=null && password.errors.required && password.touched">שדה חובה</span>
+       <br/><br/>
+    </div>
+  <!-- <input class="inputText" formControlName="password"
+  [(ngModel)]="user.password" placeholder="הקלד סיסמא  "/><br/><br/> -->
+  <!-- ---------------------------------------------------------------------------- -->
+  <!-- <mat-form-field class="textalain">
+    <mat-label>אמת סיסמא </mat-label>
+    <input matInput class="inputText" type="password" formControlName="password"
+    class="inputText" formControlName="password">
+   </mat-form-field><br/><br/> -->
+    <!-- ---------------------------------------------------------------------------- -->
+   <!-- /// -->
+   <!-- <mat-form-field class="textalain">
+    <mat-label> הכנס את כתובת המייל שלך </mat-label>
+    <input matInput [(ngModel)]="user.email" class="inputText" formControlName="password"
+    class="inputText" formControlName="email">
+   </mat-form-field><br/><br/> -->
+  <!-- <input class="inputText" formControlName="email"
+   [(ngModel)]="user.email" placeholder=" הכנס את כתובת המייל שלך  "/><br/><br/> -->
+  <div>
+  <button class="b" (click)="resetForm()"> לכתיבה מחודשת </button><br/><br/>
+  <input class="b" (click)="insertUser()" type="button"   value="אישור "/><br/>
+  </div>
+  </div>
+</form>
+<!-- <form [formGroup]="formData">
+<div class="SingIn"><br/><br/>
+    <a class="whrite">עליך להכניס את פרטיך על מנת להרשם לאתר שלנו</a><br/><br/>
+<div class="Input">
+<input  formControlName="name" [ngClass] =
+"{'green' : name.valid && name.dirty ,'red' : name.invalid}"  style="text-align: right;" type="text" placeholder="הקלד את שמך"/><br/><br/>
+<input formControlName="email" [ngClass] = "{'green' : name.valid && name.touched ,'red' : name.invalid}" style="text-align: right;" type="text" placeholder="הקלד את כתובת המייל שלך"/><br/><br/>
+<input [ngClass] = "{'green' : name.valid  ,'red' : name.invalid}" formControlName="password" style="text-align: right;" type="text" placeholder="הקלד סיסמא  "/><br/><br/>
+<input formControlName="password" style="text-align: right;" type="text" placeholder="אשר את סיסמתך"/><br/><br/>
+</div>
+<br/>
+<button (Click)="resetForm()" type="button">ניקוי</button>
+<br/>
+<a>על מנת שנוכל להקליד לך את הטקסט עליך להעלות תמונה של כתב היד והמספרים שלך מ-0 ועד 9 </a><br/>
+<a>במקרה וכתב היד אינו שלך עליך להשיג את כתב היד של בעל המסמך אותו אתה רוצה להקליד</a><br/><br/>
+<input type="button"  value="להעלות תמונה"/><br/><br/><br/><br/>
+
+<button (click)="checkform()">בדיקת תקינות</button>
+
+
+<br/><br/><br/><br/>
+</div>
+</form>
+ -->
+ <!-- <img class="logo" src="assets/logo_clidon.png"> -->
+

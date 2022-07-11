@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Project_whriteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Files">
+          <Key>
+            <PropertyRef Name="File_Code" />
+          </Key>
+          <Property Name="File_Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="File_Name1" Type="varchar" MaxLength="50" />
+          <Property Name="File_Url" Type="varchar" MaxLength="255" />
+          <Property Name="User_Code" Type="int" />
+        </EntityType>
+        <EntityType Name="Letters">
+          <Key>
+            <PropertyRef Name="Letters_Code" />
+          </Key>
+          <Property Name="Letters_Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ascii_Code" Type="int" />
+          <Property Name="Letter_Image" Type="varchar" MaxLength="255" />
+          <Property Name="User_Code" Type="int" />
+        </EntityType>
+        <EntityType Name="payments">
+          <Key>
+            <PropertyRef Name="Payment_Code" />
+          </Key>
+          <Property Name="Payment_Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Payment_Date" Type="datetime" />
+          <Property Name="Payment_Sum" Type="float" />
+          <Property Name="User_Code" Type="int" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="User_Code" />
+          </Key>
+          <Property Name="User_Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_Password" Type="varchar" MaxLength="20" />
+          <Property Name="User_Mail" Type="varchar" MaxLength="2048" />
+          <Property Name="Is_Manager" Type="bit" />
+        </EntityType>
+        <Association Name="FK__Files__User_Code__3C69FB99">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Files" Type="Self.Files" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_Code" />
+            </Principal>
+            <Dependent Role="Files">
+              <PropertyRef Name="User_Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Letters__User_Co__398D8EEE">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Letters" Type="Self.Letters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_Code" />
+            </Principal>
+            <Dependent Role="Letters">
+              <PropertyRef Name="User_Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__payments__User_C__3F466844">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="payments" Type="Self.payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_Code" />
+            </Principal>
+            <Dependent Role="payments">
+              <PropertyRef Name="User_Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Project_whriteModelStoreContainer">
+          <EntitySet Name="Files" EntityType="Self.Files" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Letters" EntityType="Self.Letters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="payments" EntityType="Self.payments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Files__User_Code__3C69FB99" Association="Self.FK__Files__User_Code__3C69FB99">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Files" EntitySet="Files" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Letters__User_Co__398D8EEE" Association="Self.FK__Letters__User_Co__398D8EEE">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Letters" EntitySet="Letters" />
+          </AssociationSet>
+          <AssociationSet Name="FK__payments__User_C__3F466844" Association="Self.FK__payments__User_C__3F466844">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="payments" EntitySet="payments" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Project_whriteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="File">
+          <Key>
+            <PropertyRef Name="File_Code" />
+          </Key>
+          <Property Name="File_Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="File_Name1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="File_Url" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="User_Code" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Files__User_Code__3C69FB99" FromRole="Files" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Letter">
+          <Key>
+            <PropertyRef Name="Letters_Code" />
+          </Key>
+          <Property Name="Letters_Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ascii_Code" Type="Int32" />
+          <Property Name="Letter_Image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="User_Code" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Letters__User_Co__398D8EEE" FromRole="Letters" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="payment">
+          <Key>
+            <PropertyRef Name="Payment_Code" />
+          </Key>
+          <Property Name="Payment_Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Payment_Date" Type="DateTime" Precision="3" />
+          <Property Name="Payment_Sum" Type="Double" />
+          <Property Name="User_Code" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="Self.FK__payments__User_C__3F466844" FromRole="payments" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="User_Code" />
+          </Key>
+          <Property Name="User_Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="User_Mail" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Is_Manager" Type="Boolean" />
+          <NavigationProperty Name="Files" Relationship="Self.FK__Files__User_Code__3C69FB99" FromRole="Users" ToRole="Files" />
+          <NavigationProperty Name="Letters" Relationship="Self.FK__Letters__User_Co__398D8EEE" FromRole="Users" ToRole="Letters" />
+          <NavigationProperty Name="payments" Relationship="Self.FK__payments__User_C__3F466844" FromRole="Users" ToRole="payments" />
+        </EntityType>
+        <Association Name="FK__Files__User_Code__3C69FB99">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Files" Type="Self.File" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_Code" />
+            </Principal>
+            <Dependent Role="Files">
+              <PropertyRef Name="User_Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Letters__User_Co__398D8EEE">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Letters" Type="Self.Letter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_Code" />
+            </Principal>
+            <Dependent Role="Letters">
+              <PropertyRef Name="User_Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__payments__User_C__3F466844">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="payments" Type="Self.payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_Code" />
+            </Principal>
+            <Dependent Role="payments">
+              <PropertyRef Name="User_Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Project_whriteEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Files" EntityType="Self.File" />
+          <EntitySet Name="Letters" EntityType="Self.Letter" />
+          <EntitySet Name="payments" EntityType="Self.payment" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK__Files__User_Code__3C69FB99" Association="Self.FK__Files__User_Code__3C69FB99">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Files" EntitySet="Files" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Letters__User_Co__398D8EEE" Association="Self.FK__Letters__User_Co__398D8EEE">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Letters" EntitySet="Letters" />
+          </AssociationSet>
+          <AssociationSet Name="FK__payments__User_C__3F466844" Association="Self.FK__payments__User_C__3F466844">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="payments" EntitySet="payments" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Project_whriteModelStoreContainer" CdmEntityContainer="Project_whriteEntities">
+          <EntitySetMapping Name="Files">
+            <EntityTypeMapping TypeName="Project_whriteModel.File">
+              <MappingFragment StoreEntitySet="Files">
+                <ScalarProperty Name="File_Code" ColumnName="File_Code" />
+                <ScalarProperty Name="File_Name1" ColumnName="File_Name1" />
+                <ScalarProperty Name="File_Url" ColumnName="File_Url" />
+                <ScalarProperty Name="User_Code" ColumnName="User_Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Letters">
+            <EntityTypeMapping TypeName="Project_whriteModel.Letter">
+              <MappingFragment StoreEntitySet="Letters">
+                <ScalarProperty Name="Letters_Code" ColumnName="Letters_Code" />
+                <ScalarProperty Name="Ascii_Code" ColumnName="Ascii_Code" />
+                <ScalarProperty Name="Letter_Image" ColumnName="Letter_Image" />
+                <ScalarProperty Name="User_Code" ColumnName="User_Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="payments">
+            <EntityTypeMapping TypeName="Project_whriteModel.payment">
+              <MappingFragment StoreEntitySet="payments">
+                <ScalarProperty Name="Payment_Code" ColumnName="Payment_Code" />
+                <ScalarProperty Name="Payment_Date" ColumnName="Payment_Date" />
+                <ScalarProperty Name="Payment_Sum" ColumnName="Payment_Sum" />
+                <ScalarProperty Name="User_Code" ColumnName="User_Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Project_whriteModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="User_Code" ColumnName="User_Code" />
+                <ScalarProperty Name="User_Password" ColumnName="User_Password" />
+                <ScalarProperty Name="User_Mail" ColumnName="User_Mail" />
+                <ScalarProperty Name="Is_Manager" ColumnName="Is_Manager" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

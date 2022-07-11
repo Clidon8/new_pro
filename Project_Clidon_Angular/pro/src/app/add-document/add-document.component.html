@@ -1,0 +1,17 @@
+<!-- <form> -->
+
+    <mat-form-field class="textalain">
+      <mat-label > שם הקובץ</mat-label>
+      <input matInput 
+      [(ngModel)]="document.documentsName" >
+     </mat-form-field><br/>
+
+    <mat-form-field class="textalain">
+      <mat-label > נתיב הקובץ</mat-label>
+      <input matInput
+      [(ngModel)]="document.documentPath" >
+     </mat-form-field><br/>
+
+  <button (click)="add()">הוספת קובץ</button>
+  <!-- <input   type="button" (click)="s()"/> -->
+<!-- </form> -->

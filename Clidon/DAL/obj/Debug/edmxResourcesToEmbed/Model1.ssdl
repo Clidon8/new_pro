@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Project_whriteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Files">
+    <Key>
+      <PropertyRef Name="File_Code" />
+    </Key>
+    <Property Name="File_Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="File_Name1" Type="varchar" MaxLength="50" />
+    <Property Name="File_Url" Type="varchar" MaxLength="255" />
+    <Property Name="User_Code" Type="int" />
+  </EntityType>
+  <EntityType Name="Letters">
+    <Key>
+      <PropertyRef Name="Letters_Code" />
+    </Key>
+    <Property Name="Letters_Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ascii_Code" Type="int" />
+    <Property Name="Letter_Image" Type="varchar" MaxLength="255" />
+    <Property Name="User_Code" Type="int" />
+  </EntityType>
+  <EntityType Name="payments">
+    <Key>
+      <PropertyRef Name="Payment_Code" />
+    </Key>
+    <Property Name="Payment_Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Payment_Date" Type="datetime" />
+    <Property Name="Payment_Sum" Type="float" />
+    <Property Name="User_Code" Type="int" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="User_Code" />
+    </Key>
+    <Property Name="User_Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Password" Type="varchar" MaxLength="20" />
+    <Property Name="User_Mail" Type="varchar" MaxLength="2048" />
+    <Property Name="Is_Manager" Type="bit" />
+  </EntityType>
+  <Association Name="FK__Files__User_Code__3C69FB99">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Files" Type="Self.Files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_Code" />
+      </Principal>
+      <Dependent Role="Files">
+        <PropertyRef Name="User_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Letters__User_Co__398D8EEE">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Letters" Type="Self.Letters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_Code" />
+      </Principal>
+      <Dependent Role="Letters">
+        <PropertyRef Name="User_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__payments__User_C__3F466844">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="payments" Type="Self.payments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_Code" />
+      </Principal>
+      <Dependent Role="payments">
+        <PropertyRef Name="User_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Project_whriteModelStoreContainer">
+    <EntitySet Name="Files" EntityType="Self.Files" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Letters" EntityType="Self.Letters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="payments" EntityType="Self.payments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Files__User_Code__3C69FB99" Association="Self.FK__Files__User_Code__3C69FB99">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Files" EntitySet="Files" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Letters__User_Co__398D8EEE" Association="Self.FK__Letters__User_Co__398D8EEE">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Letters" EntitySet="Letters" />
+    </AssociationSet>
+    <AssociationSet Name="FK__payments__User_C__3F466844" Association="Self.FK__payments__User_C__3F466844">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="payments" EntitySet="payments" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

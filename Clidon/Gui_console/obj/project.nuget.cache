@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "HSWxa34vnv5UWoqyHwH4/IAsaPn2LhMj0gvP4tzLOe1PbFM0Kr7AnYP/4VjtpAOieXimx/yCTRTXRvb3voYqdA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\שטרן\\Documents\\Clidon\\Gui_console\\Gui_console.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\שטרן\\.nuget\\packages\\entityframework\\6.2.0\\entityframework.6.2.0.nupkg.sha512"
+  ],
+  "logs": []
+}

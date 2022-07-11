@@ -1,0 +1,18 @@
+.personal{
+    text-align: center;
+}
+.File_uploading{
+    text-align: right;
+
+}
+.Files{
+    text-align: right;
+}
+.p{
+  direction: ltr;
+  padding: 20px,20px,20px,20px;
+  color: rgb(228, 46, 137);
+  background-color: rgb(250, 192, 219);
+  border-color: rgb(228, 46, 137);
+
+}

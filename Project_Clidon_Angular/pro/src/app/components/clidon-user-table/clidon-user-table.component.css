@@ -1,0 +1,32 @@
+.border{
+  border: rgb(83, 13, 13);
+  color: rgb(122, 6, 64);
+  margin: 50px 300px 300px 300px ;
+  text-align: center;
+
+}
+.b{
+  border: brown;
+}
+/* table {
+  /* font-family: arial, sans-serif; */
+  /* border-collapse: collapse; */
+  /* width: 10%;
+} */
+
+td {
+  border: 10x solid #ee4343;
+}
+td, th {
+  text-align: center;
+  padding: 8px;
+}
+tr{
+background-color:rgb(240, 177, 227);
+}
+.title{
+  background-color: rgb(230, 123, 208);
+}
+/* tr:nth-child(even) {
+  background-color: #dddddd;
+} */

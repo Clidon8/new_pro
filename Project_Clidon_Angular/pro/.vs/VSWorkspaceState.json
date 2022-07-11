@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\clidon-enrollment",
+    "\\src\\app\\clidon-home"
+  ],
+  "SelectedNode": "\\src\\app\\clidon-home\\clidon-home.component.html",
+  "PreviewInSolutionExplorer": false
+}

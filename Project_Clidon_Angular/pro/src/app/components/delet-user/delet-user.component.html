@@ -1,0 +1,18 @@
+
+<!-- <div mat-dialog-content>
+  <p>Want to delete this user?</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button    (click)="delet()"  cdkFocusInitial >Ok</button>
+</div> -->
+<div class="dialog">
+<h1 mat-dialog-title>user name: {{data.name}} </h1>
+<div mat-dialog-content>
+  <p>Want to delete this user?</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button  [(ngModel)]="data.name"  (click)="delet(data.name)"  cdkFocusInitial >Ok</button>
+</div>
+</div>

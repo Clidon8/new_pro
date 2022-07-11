@@ -1,0 +1,47 @@
+<!-- <input type="button" value="Sing in" />
+<input type="button" value="Personal Area" />
+<input type="button" value="Management" /> -->
+<div class="mydiv">
+<div class="tabs">
+    <div  class="tab" [ngClass] = "{'tab1':i==4}"  (click)="GoToHome()" >דף הבית</div>
+    <div class="tab" [ngClass] = "{'tab1':i==1}" (click)="GoToSingIn() "   >להרשמה</div>
+    <div class="tab" [ngClass] = "{'tab1':i==3}" (click)="GoToEntrance()" >התחברות</div>
+    <!-- ----------------------------------- -->
+    <!-- <mat-tab-group>S
+    <mat-tab>
+      <ng-template mat-tab-label>
+         <button class="tab" mat-button (click)="GoToHome()"> דף הבית</button>
+       </ng-template>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+       <button class="tab" mat-button (click)="GoToSingIn()"> להרשמה </button>
+     </ng-template>
+</mat-tab>
+<mat-tab>
+  <ng-template mat-tab-label>
+     <button class="tab" mat-button (click)="GoToEntrance()"> התחברות </button>
+   </ng-template>
+</mat-tab>
+    </mat-tab-group> -->
+
+
+
+    <!-- ------------------------------------------------------------- -->
+<!-- <img _ngcontent-qwv-c17="" src="assets/logo.png"/> -->
+    <!-- <div class="tab" [ngClass] = "{'tab1':i==2}" (click)="GoToManagerPassword()" >ניהול</div> -->
+    <!-- <div  class="tab"  routerLinkActive="tab1" routerLink="/clidon-home" >דף הבית</div>
+    <div class="tab"  routerLinkActive="tab1" routerLink="/clidon-sing-in" >להתחברות</div>
+    <div class="tab"  routerLinkActive="tab1" routerLink="/clidon-entrance">איזור אישי</div>
+    <div class="tab"  routerLinkActive="tab1" routerLink="/clidon-manager-password">ניהול</div> -->
+</div>
+
+
+<div class="border">
+    <router-outlet></router-outlet>
+</div>
+
+</div>
+
+
+

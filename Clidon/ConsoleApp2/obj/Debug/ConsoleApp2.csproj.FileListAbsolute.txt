@@ -1,0 +1,10 @@
+C:\Users\שטרן\Documents\Clidon\ConsoleApp2\bin\Debug\ConsoleApp2.exe.config
+C:\Users\שטרן\Documents\Clidon\ConsoleApp2\bin\Debug\ConsoleApp2.exe
+C:\Users\שטרן\Documents\Clidon\ConsoleApp2\bin\Debug\ConsoleApp2.pdb
+C:\Users\שטרן\Documents\Clidon\ConsoleApp2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\שטרן\Documents\Clidon\ConsoleApp2\bin\Debug\EntityFramework.dll
+C:\Users\שטרן\Documents\Clidon\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.AssemblyReference.cache
+C:\Users\שטרן\Documents\Clidon\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.CoreCompileInputs.cache
+C:\Users\שטרן\Documents\Clidon\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.CopyComplete
+C:\Users\שטרן\Documents\Clidon\ConsoleApp2\obj\Debug\ConsoleApp2.exe
+C:\Users\שטרן\Documents\Clidon\ConsoleApp2\obj\Debug\ConsoleApp2.pdb
